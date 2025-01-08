@@ -3,11 +3,13 @@ import axios from "axios";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Navbar from "../Navbar/navbar";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 interface formData {
   name: string;
   email: string;
   phone: string;
   doctor: string;
+  typeOfDesies: string,
   appointmentDate: string;
 }
 
@@ -17,6 +19,7 @@ const ApplyAppointment: React.FC = () => {
     email: "",
     phone: "",
     doctor: "",
+    typeOfDesies: "",
     appointmentDate: "",
   });
 
@@ -57,7 +60,7 @@ const ApplyAppointment: React.FC = () => {
         <Navbar/>
     </div>
      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mb-48">
         <h1 className="text-2xl font-bold mb-4 text-center">
           Book an Appointment
         </h1>
@@ -147,6 +150,24 @@ const ApplyAppointment: React.FC = () => {
           <div className="mb-4">
             <label
               className="block text-sm font-medium text-gray-700"
+              htmlFor="email"
+            >
+              Type of Disease
+            </label>
+            <input
+              type="typeOfDesies"
+              id="typeOfDesies"
+              name="typeOfDesies"
+              value={formData.typeOfDesies}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded mt-2"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-sm font-medium text-gray-700"
               htmlFor="appointmentDate"
             >
               Appointment Date
@@ -172,6 +193,9 @@ const ApplyAppointment: React.FC = () => {
         </form>
       </div>
     </div>
+    <div className="pt-10 pb-6 fixed bottom-0 w-full bg-gray-800 text-white">
+          <Footer />
+        </div>
     </>
   );
 };

@@ -5,7 +5,6 @@ const { createAppointment, getAllAppointments, deleteUserAppointment, updateuser
 
 
 router.post('/createappointment', createAppointment);
-// router.get('/appointment/:id', getAppointmentDetailes);
 router.get('/allAppointments', getAllAppointments);
 router.delete('/deleteAppointment/:id', deleteUserAppointment);
 router.put('/updateAppointment/:id', updateuserAppontment);

@@ -11,7 +11,7 @@ function Home() {
           <Navbar />
         </div>
 
-        <div className="mt-10 flex-grow">
+        <div className="mt-28 flex-grow">
           <Carousel />
         </div>
 

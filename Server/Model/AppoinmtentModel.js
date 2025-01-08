@@ -19,6 +19,10 @@ var userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    typeOfDesies: {
+        type:String,
+        required:true,
+    },
     appointmentDate:{
         type:String,
         required:true,

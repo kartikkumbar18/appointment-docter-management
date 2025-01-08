@@ -4,9 +4,9 @@ const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [ 
-    { id: 1, imageUrl: "https://img.freepik.com/premium-vector/woman-see-doctor-check-herself-doctor-consulting-female-patient_134553-390.jpg?w=826", title: "Slide 1" },
-    { id: 2, imageUrl: "https://images.everydayhealth.com/images/is-your-psa-doctor-right-for-you-alt-1440x810.jpg?sfvrsn=49a5c2df_4", title: "Slide 2" },
-    { id: 3, imageUrl: "https://img.freepik.com/premium-vector/woman-see-doctor-check-herself-doctor-consulting-female-patient_134553-390.jpg", title: "Slide 3" },
+    { id: 1, imageUrl: "https://img.freepik.com/premium-vector/woman-see-doctor-check-herself-doctor-consulting-female-patient_134553-390.jpg?w=826"},
+    { id: 2, imageUrl: "https://images.everydayhealth.com/images/is-your-psa-doctor-right-for-you-alt-1440x810.jpg?sfvrsn=49a5c2df_4" },
+    { id: 3, imageUrl: "https://img.freepik.com/premium-vector/woman-see-doctor-check-herself-doctor-consulting-female-patient_134553-390.jpg"},
   ]
 
   const prevSlide = () => {
@@ -37,12 +37,8 @@ const Carousel: React.FC = () => {
           >
             <img
               src={slide.imageUrl}
-              alt={slide.title}
               className="w-full h-[27rem] object-fill"
             />
-            <div className="text-center text-lg font-semibold mt-2">
-              {slide.title}
-            </div>
           </div>
         ))}
       </div>

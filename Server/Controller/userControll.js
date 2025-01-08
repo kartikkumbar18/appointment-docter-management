@@ -3,9 +3,9 @@ const User = require('../Model/AppoinmtentModel');
 const createAppointment = async (req, res) => {
     try{
         console.log(req.body);
-        const { name, email, phone, doctor, appointmentDate } = req.body;
+        const { name, email, phone, doctor, typeOfDesies ,appointmentDate } = req.body;
 
-        if(!name || !email || !phone || !doctor || !appointmentDate){
+        if(!name || !email || !phone || !doctor || !typeOfDesies || !appointmentDate){
             return res.status(400).json({ message: 'All fields are required' });
         }
 
@@ -14,6 +14,7 @@ const createAppointment = async (req, res) => {
             email,
             phone,
             doctor,
+            typeOfDesies,
             appointmentDate,
         });
 
@@ -25,20 +26,6 @@ const createAppointment = async (req, res) => {
     }
     
 }
-
-// const getAppointmentDetailes = async (req, res) => {
-//     try{
-//         const appointment = await User.findById(req.params.id);
-//         if(!appointment){
-//             return res.status(404).json({ message: 'Appointment not found' });
-//         }
-//         res.status(200).json({ message: 'Appointment details', data: appointment });
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ message: 'Server error', error :  error.message });
-//     }
-
-// }
 
 const getAllAppointments = async (req, res) => {
     try{

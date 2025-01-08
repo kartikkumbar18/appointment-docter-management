@@ -3,10 +3,12 @@ import axios from "axios";
 import { MdDelete } from "react-icons/md";
 import Navbar from "../Navbar/navbar";
 import { FaPencilAlt } from "react-icons/fa";
+import Footer from "../Footer/Footer"
 
 interface Appointment {
   appointmentDate: string;
   doctor: string;
+  typeOfDesies:string;
   email: string;
   name: string;
   phone: string;
@@ -95,6 +97,7 @@ function ListAppointments() {
             <tr className="bg-gray-100">
               <th className="px-4 py-2 border text-left">Full Name</th>
               <th className="px-4 py-2 border text-left">Doctor Name</th>
+              <th className="px-4 py-2 border text-left">Type of Disease</th>
               <th className="px-4 py-2 border text-left">Appointment Date</th>
               <th className="px-4 py-2 border text-left">Email Address</th>
               <th className="px-4 py-2 border text-left">Mobile Number</th>
@@ -111,6 +114,7 @@ function ListAppointments() {
                 >
                   <td className="px-4 py-2 border">{appointment.name}</td>
                   <td className="px-4 py-2 border">{appointment.doctor}</td>
+                  <td className="px-4 py-2 border">{appointment.typeOfDesies}</td>
                   <td className="px-4 py-2 border">
                     {appointment.appointmentDate}
                   </td>
@@ -170,6 +174,16 @@ function ListAppointments() {
                   />
                 </label>
                 <label className="block mb-2">
+                  Type of Disease:
+                  <input
+                    type="text"
+                    name="typeOfDesies"
+                    value={selectedAppointment.typeOfDesies}
+                    onChange={handleChange}
+                    className="border rounded p-2 w-full"
+                  />
+                </label>
+                <label className="block mb-2">
                   Appointment Date:
                   <input
                     type="text"
@@ -220,6 +234,9 @@ function ListAppointments() {
           </div>
         </div>
       )}
+      <div className="pt-10 pb-6 fixed bottom-0 w-full bg-gray-800 text-white">
+          <Footer />
+        </div>
     </>
   );
 }
